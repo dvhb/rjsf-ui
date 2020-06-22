@@ -47,7 +47,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@dvhb/tslint-config-react": "^1.0.9",
-    "@dvhb/ui": "^1.1.0-beta.86",
+    "@dvhb/ui": "^1.1.0-beta.87",
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@storybook/addon-actions": "^5.3.12",
@@ -82,12 +82,12 @@
     "rollup-plugin-typescript2": "^0.22.0",
     "semantic-release": "^17.0.0",
     "tslint": "^6.0.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.9.5"
   },
   "peerDependencies": {
     "react": "16.x",
     "react-jsonschema-form": "^1.8.1",
-    "@dvhb/ui": "^1.1.0-beta.86"
+    "@dvhb/ui": "1.x.x"
   },
   "release": {
     "plugins": [
