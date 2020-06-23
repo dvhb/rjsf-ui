@@ -1,6 +1,6 @@
 {
   "name": "@dvhb/rjsf-ui",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "rjsf with @dvhb/ui components",
   "license": "MIT",
   "main": "dist/index.js",
