@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/dvhb/rjsf-ui/compare/v1.1.0...v1.1.1) (2020-06-23)
+
+
+### Bug Fixes
+
+* date widget default value ([1820d11](https://github.com/dvhb/rjsf-ui/commit/1820d1118a6d78213950e9b2374e4b61e84a4d01))
+
 # [1.1.0](https://github.com/dvhb/rjsf-ui/compare/v1.0.1...v1.1.0) (2020-06-23)
 
 
