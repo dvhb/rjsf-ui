@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dvhb/rjsf-ui/compare/v1.0.0...v1.0.1) (2020-06-22)
+
+
+### Bug Fixes
+
+* **package:** update dependencies ([357fd58](https://github.com/dvhb/rjsf-ui/commit/357fd58234875617c00764b620b6dbcfd6fe89dd))
+
 # 1.0.0 (2020-06-22)
 
 
