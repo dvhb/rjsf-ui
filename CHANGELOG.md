@@ -1,3 +1,10 @@
+## [1.1.2-beta.1](https://github.com/dvhb/rjsf-ui/compare/v1.1.1...v1.1.2-beta.1) (2020-06-23)
+
+
+### Bug Fixes
+
+* beta release ([f693314](https://github.com/dvhb/rjsf-ui/commit/f6933147f322c7c07cd5f51bb8cf5257b42eea13))
+
 ## [1.1.1](https://github.com/dvhb/rjsf-ui/compare/v1.1.0...v1.1.1) (2020-06-23)
 
 
