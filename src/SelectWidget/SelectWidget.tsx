@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import get from 'lodash/get';
 import { FieldTemplateProps, WidgetProps } from 'react-jsonschema-form';
 import { asNumber, guessType } from 'react-jsonschema-form/lib/utils';
@@ -84,6 +84,7 @@ const SelectWidget = ({
   rawErrors,
   formContext,
 }: WidgetProps & Pick<FieldTemplateProps, 'rawErrors'> & { multiple: boolean }) => {
+  const [inputValue, setInputValue] = useState<string>('');
   const { Field, Select } = useComponents();
   const [localErrors, setLocalErrors] = useState<string[]>([]);
 
@@ -96,6 +97,7 @@ const SelectWidget = ({
     responseBodyParam,
     valueProp,
     labelProp,
+    limit,
     emptyOption,
     errorText,
     searchable = true,
@@ -127,8 +129,13 @@ const SelectWidget = ({
 
   let loadOptions = undefined;
   if (url && requestBodyParams) {
-    loadOptions = async (inputValue: string) => {
-      const body: any = {};
+    loadOptions = async (inputValue: string, loadedOptions: { value: any; label: string }[]) => {
+      const body: any = limit
+        ? {
+            limit,
+            offset: loadedOptions.length,
+          }
+        : {};
       (requestBodyParams as string[]).map((requestBodyParam, index) => {
         body[requestBodyParam] =
           requestBodyValues && (requestBodyValues as string[])[index]
@@ -154,13 +161,26 @@ const SelectWidget = ({
         })
         .filter((item: any) => item.label.toLowerCase().includes(inputValue.toLowerCase()));
 
+      const hasMore = limit ? options.length > 0 : false;
+
       if (emptyOption) {
         options.push({ label: emptyOption, value: 'empty' });
       }
       schema.enum = options.map((option: any) => option.value);
-      return options;
+
+      return {
+        options,
+        hasMore,
+      };
     };
   }
+
+  const handleInputChange = useCallback(
+    (inputVal: string) => {
+      setInputValue(inputVal);
+    },
+    [setInputValue],
+  );
 
   const loadingMessage = () => 'Загрузка...';
 
@@ -187,6 +207,8 @@ const SelectWidget = ({
         onChange={handleChange}
         options={enumOptions as any}
         inputProps={{ type: inputType }}
+        inputValue={inputValue}
+        onInputChange={handleInputChange}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>

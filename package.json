@@ -47,7 +47,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@dvhb/tslint-config-react": "^1.0.9",
-    "@dvhb/ui": "^1.1.0-beta.87",
+    "@dvhb/ui": "^1.1.0-beta.88",
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@storybook/addon-actions": "^5.3.12",
