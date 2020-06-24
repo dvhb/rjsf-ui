@@ -1,3 +1,10 @@
+# [1.2.0-beta.3](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2020-06-24)
+
+
+### Features
+
+* update components ([28a2dd5](https://github.com/dvhb/rjsf-ui/commit/28a2dd5bc0d9860889a0a229a1c4b3d9d2212c17))
+
 # [1.2.0-beta.2](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2020-06-24)
 
 
