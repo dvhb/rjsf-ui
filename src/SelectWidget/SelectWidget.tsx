@@ -99,6 +99,7 @@ const SelectWidget = ({
     emptyOption,
     errorText,
     searchable = true,
+    inputType = 'text',
   } = options;
   if (!formContext) {
     return null;
@@ -185,6 +186,7 @@ const SelectWidget = ({
         defaultOptions
         onChange={handleChange}
         options={enumOptions as any}
+        inputProps={{ type: inputType }}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>

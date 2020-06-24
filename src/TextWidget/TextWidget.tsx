@@ -25,7 +25,7 @@ const TextWidget = ({
   const [localErrors, setLocalErrors] = useState<string[]>([]);
 
   const label = options.title ? String(options.title) : rawLabel;
-  const { mask, maskChar, errorText } = options as any;
+  const { mask, maskChar, errorText, inputType = 'text' } = options as any;
   const formStepIndex = options?.['__step__'];
   const isStepSubmitted = formContext.submittedSteps?.includes(formStepIndex) ?? false;
   const hasError = rawErrors?.length > 0 || localErrors.length > 0;
@@ -101,6 +101,7 @@ const TextWidget = ({
         maskChar={maskChar}
         formatChars={formatChars}
         onChange={_onChange}
+        type={inputType}
         // onBlur={_onBlur}
         // onFocus={_onFocus}
       />
