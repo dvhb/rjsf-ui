@@ -1,3 +1,10 @@
+# [1.2.0-beta.1](https://github.com/dvhb/rjsf-ui/compare/v1.1.2-beta.1...v1.2.0-beta.1) (2020-06-24)
+
+
+### Features
+
+* add digit keyboard support for select and input ([e3b634e](https://github.com/dvhb/rjsf-ui/commit/e3b634e32c728f8bb8bc259ed97be31ef84c471b))
+
 ## [1.1.2-beta.1](https://github.com/dvhb/rjsf-ui/compare/v1.1.1...v1.1.2-beta.1) (2020-06-23)
 
 
