@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { UiSchema } from 'react-jsonschema-form';
 import { JSONSchema6 } from 'json-schema';
 
-import { FormDemo } from '../utils/forms';
+import { FormDemo } from '../utils';
 
 export default {
   title: 'TextWidget',
@@ -15,21 +15,21 @@ const schema: JSONSchema6 = {
   properties: {
     text: { type: 'string', description: 'description' },
     phone: { type: 'string' },
-    fioEn: { type: 'string', format: 'fio-en' },
     email: { type: 'string', format: 'email-regex' },
     maxLength: { type: 'string', maxLength: 50 },
   },
-  required: ['text', 'phone', 'fioEn', 'email', 'maxLength'],
+  required: ['text', 'phone', 'email', 'maxLength'],
 };
 
 const uiSchema: UiSchema = {
-  text: { 'ui:placeholder': 'placeholder', 'ui:help': 'help' },
-  phone: { 'ui:mask': '+7 (999) 999-99-99' },
-  fioEn: {
-    'ui:errorText': {
-      required: 'Text for required error',
-      format: 'Text for format "fio-en" error',
-    },
+  text: {
+    'ui:placeholder': 'placeholder',
+    'ui:help': 'help',
+  },
+  phone: {
+    'ui:mask': '+7 (999) 999-99-99',
+    'ui:maskChar': null,
+    'ui:inputType': 'tel',
   },
   maxLength: {
     'ui:errorText': {
@@ -38,6 +38,4 @@ const uiSchema: UiSchema = {
   },
 };
 
-export const Default = () => (
-  <FormDemo schema={schema} uiSchema={uiSchema} initialValues={{ text: 'text', phone: '79081234567' }} />
-);
+export const Default = () => <FormDemo schema={schema} uiSchema={uiSchema} initialValues={{ text: 'text' }} />;

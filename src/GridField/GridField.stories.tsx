@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { UiSchema } from 'react-jsonschema-form';
 import { JSONSchema6 } from 'json-schema';
 
-import { FormDemo } from '../utils/forms';
+import { FormDemo } from '../utils';
 
 export default {
   title: 'GridField',

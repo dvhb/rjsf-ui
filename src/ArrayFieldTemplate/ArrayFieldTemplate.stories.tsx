@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import { FormDemo } from '../utils/forms';
+import { FormDemo } from '../utils';
 
 export default {
   title: 'ArrayFieldTemplate',

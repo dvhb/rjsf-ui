@@ -4,3 +4,18 @@
 [![Travis (.org)](https://img.shields.io/travis/dvhb/rjsf-ui)](https://travis-ci.org/dvhb/rjsf-ui)
 
 rjsf with @dvhb/ui components
+
+### Todo widgets support
+
+- [ ] CheckboxesWidget
+- [ ] EmailWidget
+- [ ] ErrorList
+- [ ] PasswordWidget
+- [ ] RadioWidget
+- [ ] RangeWidget
+- [ ] TextareaWidget
+- [ ] UpDownWidget
+
+### Todo refactoring
+
+- [ ] Remove isAltCountry from TextWidget

@@ -1,7 +1,7 @@
 import React from 'react';
 import { JSONSchema6 } from 'json-schema';
 
-import { FormDemo } from '../utils/forms';
+import { FormDemo } from '../utils';
 
 export default {
   title: 'FileWidget',

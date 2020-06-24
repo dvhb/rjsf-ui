@@ -18,14 +18,37 @@ const TextWidget = ({
   rawErrors,
   options,
   schema,
-  placeholder,
+  placeholder: placeholderRaw,
 }: WidgetProps & Pick<FieldTemplateProps, 'rawErrors'>) => {
   const { Input, Field } = useComponents();
 
   const [localErrors, setLocalErrors] = useState<string[]>([]);
+  const {
+    mask,
+    maskChar,
+    errorText: errorTextRaw,
+    countryForAlt,
+    inputType = 'text',
+    extraFormatErrors = [],
+  } = options as any;
+  const inputMaskChar = maskChar === null ? null : maskChar;
 
-  const label = options.title ? String(options.title) : rawLabel;
-  const { mask, maskChar, errorText, inputType = 'text' } = options as any;
+  const isAltCountry =
+    countryForAlt && formContext.main.countries.length === 1 && formContext.main.countries[0].value === countryForAlt;
+  const title = isAltCountry ? options.titleAlt : options.title;
+  const disallowedChars = isAltCountry ? options.disallowedCharsAlt : options.disallowedChars;
+  const placeholder = isAltCountry ? (options.placeholderAlt as string) : placeholderRaw;
+  const errorText = isAltCountry
+    ? { ...errorTextRaw, disallowedChars: errorTextRaw.disallowedCharsAlt, format: errorTextRaw.formatAlt }
+    : errorTextRaw;
+
+  extraFormatErrors.forEach((extra: { pattern: string; text: string }) => {
+    if (new RegExp(extra.pattern, 'i').test(value ?? '')) {
+      errorText.format = extra.text;
+    }
+  });
+
+  const label = title ? String(title) : rawLabel;
   const formStepIndex = options?.['__step__'];
   const isStepSubmitted = formContext.submittedSteps?.includes(formStepIndex) ?? false;
   const hasError = rawErrors?.length > 0 || localErrors.length > 0;
@@ -41,7 +64,7 @@ const TextWidget = ({
   const _onChange = useCallback(
     ({ target: { value: rawValue } }: React.ChangeEvent<HTMLInputElement>) => {
       let value = rawValue;
-      const { disallowedChars, transform = [] } = options as { disallowedChars?: string; transform?: string[] };
+      const { transform = [] } = options as { transform?: string[] };
 
       if (maxLength && value.length > maxLength) {
         return;
@@ -98,7 +121,7 @@ const TextWidget = ({
         disabled={disabled || readonly}
         value={value ? value : ''}
         mask={mask}
-        maskChar={maskChar}
+        maskChar={inputMaskChar}
         formatChars={formatChars}
         onChange={_onChange}
         type={inputType}

@@ -3,7 +3,7 @@ import { JSONSchema6 } from 'json-schema';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import { FormDemo } from '../utils/forms';
+import { FormDemo } from '../utils';
 
 export default {
   title: 'TextBirthdayField',

@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { mergeObjects } from 'react-jsonschema-form/lib/utils';
 import { JSONSchema6 } from 'json-schema';
 
-import { FormDemo } from '../utils/forms';
+import { FormDemo } from '../utils';
 
 export default {
   title: 'CollapsibleField',
