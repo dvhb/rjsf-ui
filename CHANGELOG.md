@@ -1,3 +1,10 @@
+# [1.2.0-beta.2](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2020-06-24)
+
+
+### Bug Fixes
+
+* add infinity scroll possibility ([0774bb2](https://github.com/dvhb/rjsf-ui/commit/0774bb2b2489d63ff8040639a3166ddfaf1d062b))
+
 # [1.2.0-beta.1](https://github.com/dvhb/rjsf-ui/compare/v1.1.2-beta.1...v1.2.0-beta.1) (2020-06-24)
 
 
