@@ -5,6 +5,7 @@ import { useComponents } from '@dvhb/ui';
 import { ErrorListField } from '../ErrorList';
 
 const TextWidget = ({
+  id,
   label: rawLabel,
   required,
   readonly,
@@ -64,7 +65,6 @@ const TextWidget = ({
   const _onChange = useCallback(
     ({ target: { value: rawValue } }: React.ChangeEvent<HTMLInputElement>) => {
       let value = rawValue;
-      const { transform = [] } = options as { transform?: string[] };
 
       if (maxLength && value.length > maxLength) {
         return;
@@ -80,6 +80,16 @@ const TextWidget = ({
         }
       }
 
+      onChange(value === '' ? options.emptyValue : value);
+    },
+    [options, onChange, maxLength],
+  );
+
+  const _onBlur = useCallback(
+    ({ target: { value: rawValue } }: React.FocusEvent<HTMLInputElement>) => {
+      let value = rawValue;
+      const { transform = [] } = options as { transform?: string[] };
+
       if (transform && transform.includes('toLowerCase')) {
         value = value.toLowerCase();
       }
@@ -87,10 +97,10 @@ const TextWidget = ({
       if (transform && transform.includes('toUpperCase')) {
         value = value.toUpperCase();
       }
-
       onChange(value === '' ? options.emptyValue : value);
+      onBlur(id, value && value);
     },
-    [options, onChange, maxLength],
+    [onBlur, onChange, id, options],
   );
 
   const reachedMaxLength = maxLength && value && value.length === maxLength;
@@ -125,7 +135,7 @@ const TextWidget = ({
         formatChars={formatChars}
         onChange={_onChange}
         type={inputType}
-        // onBlur={_onBlur}
+        onBlur={_onBlur}
         // onFocus={_onFocus}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />

@@ -14,6 +14,7 @@ const schema: JSONSchema6 = {
   type: 'object',
   properties: {
     text: { type: 'string', description: 'description' },
+    textUpperCase: { type: 'string', description: 'description' },
     phone: { type: 'string' },
     email: { type: 'string', format: 'email-regex' },
     maxLength: { type: 'string', maxLength: 50 },
@@ -25,6 +26,10 @@ const uiSchema: UiSchema = {
   text: {
     'ui:placeholder': 'placeholder',
     'ui:help': 'help',
+  },
+  textUpperCase: {
+    'ui:placeholder': 'placeholder',
+    'ui:transform': ['toUpperCase'],
   },
   phone: {
     'ui:mask': '+7 (999) 999-99-99',
