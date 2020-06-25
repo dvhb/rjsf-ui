@@ -1,3 +1,10 @@
+# [1.2.0-beta.4](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2020-06-25)
+
+
+### Bug Fixes
+
+* move text transformation to the onBlur ([429dfd1](https://github.com/dvhb/rjsf-ui/commit/429dfd1c1677e8dcc99ca630b9e6c60d925d33fd))
+
 # [1.2.0-beta.3](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2020-06-24)
 
 
