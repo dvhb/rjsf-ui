@@ -1,3 +1,10 @@
+# [1.2.0-beta.5](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2020-06-26)
+
+
+### Bug Fixes
+
+* change email regexp ([2a79997](https://github.com/dvhb/rjsf-ui/commit/2a79997d30b676201f85e7d51d1ca43c68634935))
+
 # [1.2.0-beta.4](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2020-06-25)
 
 
