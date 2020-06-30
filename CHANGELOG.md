@@ -1,3 +1,10 @@
+# [1.2.0-beta.9](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2020-06-30)
+
+
+### Bug Fixes
+
+* change required validation text for full name field ([1d842a3](https://github.com/dvhb/rjsf-ui/commit/1d842a3606d7b60fdc4f8d4f04e0a636a8e644d9))
+
 # [1.2.0-beta.8](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2020-06-30)
 
 
