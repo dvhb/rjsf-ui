@@ -84,10 +84,6 @@ const SelectWidget = ({
   rawErrors,
   formContext,
 }: WidgetProps & Pick<FieldTemplateProps, 'rawErrors'> & { multiple: boolean }) => {
-  const [inputValue, setInputValue] = useState<string>('');
-  const { Field, Select } = useComponents();
-  const [localErrors, setLocalErrors] = useState<string[]>([]);
-
   const {
     enumOptions,
     enumDisabled,
@@ -103,6 +99,13 @@ const SelectWidget = ({
     searchable = true,
     inputType = 'text',
   } = options;
+
+  const defaultInputValue = getFullValue(enumOptions, value, multiple, options)?.label || '';
+
+  const [inputValue, setInputValue] = useState<string>(searchable ? defaultInputValue : '');
+  const { Field, Select } = useComponents();
+  const [localErrors, setLocalErrors] = useState<string[]>([]);
+
   if (!formContext) {
     return null;
   }
@@ -121,7 +124,7 @@ const SelectWidget = ({
 
   const handleChange = (option: any) => {
     onChange(processValue(schema, option?.value));
-    setInputValue(option?.label || '');
+    searchable && setInputValue(option?.label || '');
   };
 
   const handleInputChange = (inputVal: string, { action }: any) => {
@@ -129,7 +132,7 @@ const SelectWidget = ({
       setInputValue(inputVal);
       return inputVal;
     }
-    if (action === 'input-blur') {
+    if (action === 'input-blur' && searchable) {
       const option = getFullValue(enumOptions, value, multiple, options);
       setInputValue(option?.label || '');
       return option?.label || '';
@@ -218,7 +221,7 @@ const SelectWidget = ({
         inputProps={{ type: inputType }}
         inputValue={inputValue}
         onInputChange={handleInputChange}
-        controlShouldRenderValue={false}
+        // controlShouldRenderValue={false}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>
