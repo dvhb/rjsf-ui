@@ -1,3 +1,11 @@
+# [1.2.0-beta.8](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2020-06-30)
+
+
+### Bug Fixes
+
+* select default value ([05647fd](https://github.com/dvhb/rjsf-ui/commit/05647fd4300a796bc086a71dbde93b98ff218aa3))
+* select value render ([902fb6d](https://github.com/dvhb/rjsf-ui/commit/902fb6d6b4f818766f5b9aa996a63f55aa683b95))
+
 # [1.2.0-beta.7](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2020-06-30)
 
 
