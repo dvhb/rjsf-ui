@@ -1,3 +1,10 @@
+# [1.2.0-beta.6](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2020-06-30)
+
+
+### Bug Fixes
+
+* add mask char for russian letters and numbers ([e8c84bb](https://github.com/dvhb/rjsf-ui/commit/e8c84bbf160430e6f81ad8c588ce68f3a12d240a))
+
 # [1.2.0-beta.5](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2020-06-26)
 
 
