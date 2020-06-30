@@ -221,7 +221,7 @@ const SelectWidget = ({
         inputProps={{ type: inputType }}
         inputValue={inputValue}
         onInputChange={handleInputChange}
-        // controlShouldRenderValue={false}
+        controlShouldRenderValue={!searchable}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>
