@@ -1,3 +1,10 @@
+# [1.2.0-beta.7](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2020-06-30)
+
+
+### Bug Fixes
+
+* allow to edit selected option ([b9fc67a](https://github.com/dvhb/rjsf-ui/commit/b9fc67accd6d49ae611e20af0a88b9f44b355492))
+
 # [1.2.0-beta.6](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2020-06-30)
 
 
