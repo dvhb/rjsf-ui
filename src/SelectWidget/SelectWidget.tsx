@@ -44,7 +44,7 @@ const processValue = (schema: any, value: any) => {
   return value;
 };
 
-const getDefaultValue = (enumOptions: any, value: any, isMulti: boolean, options: any) => {
+const getFullValue = (enumOptions: any, value: any, isMulti: boolean, options: any) => {
   if (options.url && value) {
     if (value === 'empty') {
       return { label: options.emptyOption, value: 'empty' };
@@ -119,7 +119,23 @@ const SelectWidget = ({
     isStepSubmitted,
   ]);
 
-  const handleChange = (option: any) => onChange(processValue(schema, option?.value));
+  const handleChange = (option: any) => {
+    onChange(processValue(schema, option?.value));
+    setInputValue(option?.label || '');
+  };
+
+  const handleInputChange = (inputVal: string, { action }: any) => {
+    if (action === 'input-change') {
+      setInputValue(inputVal);
+      return inputVal;
+    }
+    if (action === 'input-blur') {
+      const option = getFullValue(enumOptions, value, multiple, options);
+      setInputValue(option?.label || '');
+      return option?.label || '';
+    }
+  };
+
   const handleOptionDisabled = (option: any) => {
     if (enumDisabled) {
       return (enumDisabled as string[]).some(enumDisabledItem => enumDisabledItem === option.value);
@@ -175,13 +191,6 @@ const SelectWidget = ({
     };
   }
 
-  const handleInputChange = useCallback(
-    (inputVal: string) => {
-      setInputValue(inputVal);
-    },
-    [setInputValue],
-  );
-
   const loadingMessage = () => 'Загрузка...';
 
   return (
@@ -195,7 +204,7 @@ const SelectWidget = ({
         error={hasError && showError}
         placeholder={null}
         loadingMessage={loadingMessage}
-        defaultValue={getDefaultValue(enumOptions, value, multiple, options)}
+        defaultValue={getFullValue(enumOptions, value, multiple, options)}
         required={required}
         isMulti={multiple}
         isDisabled={disabled || readonly}
@@ -209,6 +218,7 @@ const SelectWidget = ({
         inputProps={{ type: inputType }}
         inputValue={inputValue}
         onInputChange={handleInputChange}
+        controlShouldRenderValue={false}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>
