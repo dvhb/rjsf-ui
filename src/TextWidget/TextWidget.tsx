@@ -40,7 +40,12 @@ const TextWidget = ({
   const disallowedChars = isAltCountry ? options.disallowedCharsAlt : options.disallowedChars;
   const placeholder = isAltCountry ? (options.placeholderAlt as string) : placeholderRaw;
   const errorText = isAltCountry
-    ? { ...errorTextRaw, disallowedChars: errorTextRaw.disallowedCharsAlt, format: errorTextRaw.formatAlt }
+    ? {
+        ...errorTextRaw,
+        required: errorTextRaw.requiredAlt,
+        disallowedChars: errorTextRaw.disallowedCharsAlt,
+        format: errorTextRaw.formatAlt,
+      }
     : errorTextRaw;
 
   extraFormatErrors.forEach((extra: { pattern: string; text: string }) => {
