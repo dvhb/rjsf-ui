@@ -123,8 +123,12 @@ const SelectWidget = ({
   ]);
 
   const handleChange = (option: any) => {
-    onChange(processValue(schema, option?.value));
-    searchable && setInputValue(option?.label || '');
+    setTimeout(() => {
+      onChange(processValue(schema, option?.value));
+      if (searchable) {
+        setInputValue(option?.label || '');
+      }
+    }, 0);
   };
 
   const handleInputChange = (inputVal: string, { action }: any) => {
