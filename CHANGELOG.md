@@ -1,3 +1,10 @@
+# [1.2.0-beta.10](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2020-07-06)
+
+
+### Bug Fixes
+
+* select on phones ([bc20fa0](https://github.com/dvhb/rjsf-ui/commit/bc20fa0bb757c177837d547dc82c59b34efc9031))
+
 # [1.2.0-beta.9](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2020-06-30)
 
 
