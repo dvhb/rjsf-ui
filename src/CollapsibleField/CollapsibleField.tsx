@@ -7,6 +7,9 @@ import { deepEquals, getDefaultFormState } from 'react-jsonschema-form/lib/utils
 import PropTypes from 'prop-types';
 import { FieldProps } from 'react-jsonschema-form';
 import { useComponents } from '@dvhb/ui';
+import isArray from 'lodash/isArray';
+import isObject from 'lodash/isObject';
+import isEmpty from 'lodash/isEmpty';
 
 class CollapseMenuAction extends Component {
   render() {
@@ -132,15 +135,38 @@ class CollapseLegend extends Component {
   }
 }
 
+const detectDefaultValue = (formData: any, schema: any): boolean => {
+  if (!formData) {
+    return false;
+  }
+  if (isArray(formData)) {
+    return !isEmpty(formData);
+  }
+  if (isObject(formData)) {
+    const empty = Object.entries(formData).every(([key, value]) => {
+      if (isObject(value)) {
+        return isEmpty(value) || !value.value;
+      }
+      return !schema.properties[key].default || value === schema.properties[key].default;
+    });
+
+    return !empty;
+  }
+
+  return false;
+};
+
 class CollapsibleField extends Component<FieldProps> {
   constructor(props) {
     super(props);
 
     const {
-      uiSchema: { collapse: { collapsed = true } = {} },
+      uiSchema: { collapse: { collapsed = true, collapsedIfDefaultValue = true } = {} },
     } = props;
 
-    this.state = { collapsed };
+    const hasDefaultValue = detectDefaultValue(props.formData, props.schema);
+
+    this.state = { collapsed: hasDefaultValue ? collapsedIfDefaultValue : collapsed };
   }
 
   appendToArray = (formData = [], newVal) => {
