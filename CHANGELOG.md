@@ -1,3 +1,10 @@
+# [1.2.0-beta.11](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2020-07-07)
+
+
+### Features
+
+* uncollpase field if it has value ([a29bbd8](https://github.com/dvhb/rjsf-ui/commit/a29bbd8c2148c368e8ce75bff54687fd2202194c))
+
 # [1.2.0-beta.10](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2020-07-06)
 
 
