@@ -1,3 +1,10 @@
+# [1.2.0-beta.12](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2020-07-08)
+
+
+### Bug Fixes
+
+* typings ([04f1d41](https://github.com/dvhb/rjsf-ui/commit/04f1d41e72ee5c7cca45ff75ee369e660ed9e523))
+
 # [1.2.0-beta.11](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2020-07-07)
 
 
