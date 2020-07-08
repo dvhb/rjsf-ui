@@ -62,17 +62,20 @@ const TextBirthdayField = ({
     isStepSubmitted,
   ]);
 
-  const handleChange = useCallback(({ target: { value: rawValue } }: React.ChangeEvent<HTMLInputElement>) => {
-    const valueWithoutMask = rawValue.replace(/_/g, '');
-    const isBlank = !valueWithoutMask.replace(/\./g, '').trim();
-    if (isBlank) {
-      setLocalValue('');
-      return;
-    }
-    setLocalValue(rawValue);
-  }, []);
+  const handleChange = useCallback(
+    ({ target: { value: rawValue } }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const valueWithoutMask = rawValue.replace(/_/g, '');
+      const isBlank = !valueWithoutMask.replace(/\./g, '').trim();
+      if (isBlank) {
+        setLocalValue('');
+        return;
+      }
+      setLocalValue(rawValue);
+    },
+    [],
+  );
   const handleBlur = useCallback(
-    ({ target: { value: rawValue } }: React.FocusEvent<HTMLInputElement>) => {
+    ({ target: { value: rawValue } }: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const valueWithoutMask = rawValue.replace(/_/g, '');
       const isBlank = !valueWithoutMask.replace(/\./g, '').trim();
 

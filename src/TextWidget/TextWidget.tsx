@@ -68,7 +68,7 @@ const TextWidget = ({
   ]);
 
   const _onChange = useCallback(
-    ({ target: { value: rawValue } }: React.ChangeEvent<HTMLInputElement>) => {
+    ({ target: { value: rawValue } }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       let value = rawValue;
 
       if (maxLength && value.length > maxLength) {
@@ -91,7 +91,7 @@ const TextWidget = ({
   );
 
   const _onBlur = useCallback(
-    ({ target: { value: rawValue } }: React.FocusEvent<HTMLInputElement>) => {
+    ({ target: { value: rawValue } }: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       let value = rawValue;
       const { transform = [] } = options as { transform?: string[] };
 
