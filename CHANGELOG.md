@@ -1,3 +1,10 @@
+# [1.2.0-beta.13](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2020-07-09)
+
+
+### Bug Fixes
+
+* **package:** dvhb/ui moved to dev deps ([ff00262](https://github.com/dvhb/rjsf-ui/commit/ff002627efad1a3ea932c6427f6abf60594be737))
+
 # [1.2.0-beta.12](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2020-07-08)
 
 
