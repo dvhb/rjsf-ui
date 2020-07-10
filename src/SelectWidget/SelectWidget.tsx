@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React, { useCallback, useMemo, useState } from 'react';
 import get from 'lodash/get';
-import { FieldTemplateProps, utils, WidgetProps } from '@rjsf/core';
+import { FieldTemplateProps, WidgetProps } from '@rjsf/core';
+// @ts-ignore
+import { asNumber, guessType } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 
 import { ErrorListField } from '../ErrorList';
-const { asNumber, guessType } = utils;
 
 const nums = new Set(['number', 'integer']);
 

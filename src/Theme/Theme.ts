@@ -1,6 +1,6 @@
 import { ThemeProps } from '@rjsf/core';
 // @ts-ignore
-import { getDefaultRegistry } from '@rjsf/core/lib/utils';
+const { getDefaultRegistry } = require('@rjsf/core/lib/utils');
 
 import ArrayFieldTemplate from '../ArrayFieldTemplate';
 import Fields from '../Fields';

@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { ArrayFieldTemplateProps, IdSchema, utils } from '@rjsf/core';
+import { ArrayFieldTemplateProps, IdSchema } from '@rjsf/core';
 // @ts-ignore
-import { getDefaultRegistry } from '@rjsf/core/lib/utils';
+const { getDefaultRegistry } = require('@rjsf/core/lib/utils');
+// @ts-ignore
+import { getUiOptions, isMultiSelect } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 
 import AddButton from '../AddButton/AddButton';
 import IconButton from '../IconButton/IconButton';
-const { getUiOptions, isMultiSelect } = utils;
 
 const ArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   const { schema, registry = getDefaultRegistry() } = props;

@@ -1,7 +1,8 @@
 import React from 'react';
-import { FieldProps, utils } from '@rjsf/core';
+import { FieldProps } from '@rjsf/core';
+// @ts-ignore
+import { getUiOptions } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
-const { getUiOptions } = utils;
 
 const TitleField = ({ title, uiSchema }: FieldProps) => {
   const { Text } = useComponents();

@@ -4,12 +4,12 @@
 
 import React, { Component, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { FieldProps, utils } from '@rjsf/core';
+import { FieldProps } from '@rjsf/core';
+import { deepEquals, getDefaultFormState } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import isEmpty from 'lodash/isEmpty';
-const { deepEquals, getDefaultFormState } = utils;
 
 class CollapseMenuAction extends Component {
   render() {

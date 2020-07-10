@@ -1,10 +1,11 @@
 import React from 'react';
-import { UiSchema, utils } from '@rjsf/core';
+import { UiSchema } from '@rjsf/core';
+// @ts-ignore
+import { mergeObjects } from '@rjsf/core/lib/utils';
 import { withKnobs } from '@storybook/addon-knobs';
 import { JSONSchema7 } from 'json-schema';
 
 import { FormDemo } from '../utils';
-const { mergeObjects } = utils;
 
 export default {
   title: 'CollapsibleField',
