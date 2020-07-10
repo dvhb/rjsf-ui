@@ -1,5 +1,5 @@
 import React from 'react';
-import { FieldTemplateProps } from 'react-jsonschema-form';
+import { FieldTemplateProps } from '@rjsf/core';
 
 const FieldTemplate = ({ id, children, rawErrors = [] }: FieldTemplateProps) => {
   return (

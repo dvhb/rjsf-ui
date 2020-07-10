@@ -1,5 +1,5 @@
 import React from 'react';
-import { ObjectFieldTemplateProps as DefaultObjectFieldTemplateProps, UiSchema } from 'react-jsonschema-form';
+import { ObjectFieldTemplateProps as DefaultObjectFieldTemplateProps, UiSchema } from '@rjsf/core';
 
 type ObjectFieldTemplateProps = {
   TitleField: React.StatelessComponent<{ id: string; title: string; required: boolean; uiSchema: UiSchema }>;

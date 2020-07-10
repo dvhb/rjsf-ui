@@ -3,9 +3,9 @@
 // @ts-nocheck
 
 import React, { Component, useCallback } from 'react';
-import { deepEquals, getDefaultFormState } from 'react-jsonschema-form/lib/utils';
 import PropTypes from 'prop-types';
-import { FieldProps } from 'react-jsonschema-form';
+import { FieldProps } from '@rjsf/core';
+import { deepEquals, getDefaultFormState } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';

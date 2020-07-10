@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroupItem, useComponents } from '@dvhb/ui';
-import { FieldTemplateProps, WidgetProps } from 'react-jsonschema-form';
+import { FieldTemplateProps, WidgetProps } from '@rjsf/core';
 
 import { sanitized } from '../utils/sanitize';
 

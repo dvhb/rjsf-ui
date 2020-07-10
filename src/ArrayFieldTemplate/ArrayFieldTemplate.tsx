@@ -1,7 +1,10 @@
 import React from 'react';
 
-import { isMultiSelect, getDefaultRegistry, getUiOptions } from 'react-jsonschema-form/lib/utils';
-import { ArrayFieldTemplateProps, IdSchema } from 'react-jsonschema-form';
+import { ArrayFieldTemplateProps, IdSchema } from '@rjsf/core';
+// @ts-ignore
+const { getDefaultRegistry } = require('@rjsf/core/lib/utils');
+// @ts-ignore
+import { getUiOptions, isMultiSelect } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 
 import AddButton from '../AddButton/AddButton';

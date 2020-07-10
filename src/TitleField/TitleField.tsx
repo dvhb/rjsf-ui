@@ -1,6 +1,7 @@
 import React from 'react';
-import { FieldProps } from 'react-jsonschema-form';
-import { getUiOptions } from 'react-jsonschema-form/lib/utils';
+import { FieldProps } from '@rjsf/core';
+// @ts-ignore
+import { getUiOptions } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 
 const TitleField = ({ title, uiSchema }: FieldProps) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { JSONSchema6 } from 'json-schema';
+import { JSONSchema7 } from 'json-schema';
 
 import { FormDemo } from '../utils';
 
@@ -7,7 +7,7 @@ export default {
   title: 'FileWidget',
 };
 
-const schema: JSONSchema6 = {
+const schema: JSONSchema7 = {
   type: 'object',
   properties: {
     file: {
