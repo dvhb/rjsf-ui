@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { FieldProps } from 'react-jsonschema-form';
+import { FieldProps } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 const DatePeriodField = (props: FieldProps) => {

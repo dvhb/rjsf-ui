@@ -1,9 +1,9 @@
 // tslint:disable
 // @ts-nocheck
 import React from 'react';
-import ObjectField from 'react-jsonschema-form/lib/components/fields/ObjectField';
-import { orderProperties, retrieveSchema } from 'react-jsonschema-form/lib/utils';
-import { FieldProps } from 'react-jsonschema-form';
+import ObjectField from '@rjsf/core/lib/components/fields/ObjectField';
+import { orderProperties, retrieveSchema } from '@rjsf/core/lib/utils';
+import { FieldProps, utils,  } from '@rjsf/core';
 import { ComponentsContext } from '@dvhb/ui';
 
 import { GridRowDescription } from '../GridRowDescription';

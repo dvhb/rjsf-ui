@@ -1,17 +1,17 @@
 import React from 'react';
-import { UiSchema } from 'react-jsonschema-form';
+import { UiSchema, utils } from '@rjsf/core';
 import { withKnobs } from '@storybook/addon-knobs';
-import { mergeObjects } from 'react-jsonschema-form/lib/utils';
-import { JSONSchema6 } from 'json-schema';
+import { JSONSchema7 } from 'json-schema';
 
 import { FormDemo } from '../utils';
+const { mergeObjects } = utils;
 
 export default {
   title: 'CollapsibleField',
   decorators: [withKnobs],
 };
 
-const schema: JSONSchema6 = {
+const schema: JSONSchema7 = {
   type: 'object',
   properties: {
     main: {

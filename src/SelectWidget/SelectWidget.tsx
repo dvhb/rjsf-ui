@@ -1,11 +1,11 @@
 /* eslint-disable */
 import React, { useCallback, useMemo, useState } from 'react';
 import get from 'lodash/get';
-import { FieldTemplateProps, WidgetProps } from 'react-jsonschema-form';
-import { asNumber, guessType } from 'react-jsonschema-form/lib/utils';
+import { FieldTemplateProps, utils, WidgetProps } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 import { ErrorListField } from '../ErrorList';
+const { asNumber, guessType } = utils;
 
 const nums = new Set(['number', 'integer']);
 

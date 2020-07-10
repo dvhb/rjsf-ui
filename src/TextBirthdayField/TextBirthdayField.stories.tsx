@@ -1,5 +1,5 @@
 import React from 'react';
-import { JSONSchema6 } from 'json-schema';
+import { JSONSchema7 } from 'json-schema';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
 
@@ -10,7 +10,7 @@ export default {
   decorators: [withKnobs],
 };
 
-const schema: JSONSchema6 = {
+const schema: JSONSchema7 = {
   type: 'string',
   properties: {
     birthday: { type: 'string', format: 'birthday' },

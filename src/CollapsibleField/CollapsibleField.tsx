@@ -3,13 +3,13 @@
 // @ts-nocheck
 
 import React, { Component, useCallback } from 'react';
-import { deepEquals, getDefaultFormState } from 'react-jsonschema-form/lib/utils';
 import PropTypes from 'prop-types';
-import { FieldProps } from 'react-jsonschema-form';
+import { FieldProps, utils } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import isEmpty from 'lodash/isEmpty';
+const { deepEquals, getDefaultFormState } = utils;
 
 class CollapseMenuAction extends Component {
   render() {

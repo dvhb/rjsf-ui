@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { FieldTemplateProps, WidgetProps } from 'react-jsonschema-form';
+import { FieldTemplateProps, WidgetProps } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 import { ErrorListField } from '../ErrorList';

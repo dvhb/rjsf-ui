@@ -1,6 +1,6 @@
 import React from 'react';
-import { UiSchema } from 'react-jsonschema-form';
-import { JSONSchema6 } from 'json-schema';
+import { UiSchema } from '@rjsf/core';
+import { JSONSchema7 } from 'json-schema';
 
 import { FormDemo } from '../utils';
 
@@ -8,7 +8,7 @@ export default {
   title: 'RadioWidget',
 };
 
-const schema: JSONSchema6 = {
+const schema: JSONSchema7 = {
   definitions: {
     Gender: {
       title: 'Gender',

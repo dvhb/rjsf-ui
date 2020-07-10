@@ -1,5 +1,6 @@
-import { ThemeProps } from 'react-jsonschema-form';
-import { getDefaultRegistry } from 'react-jsonschema-form/lib/utils';
+import { ThemeProps } from '@rjsf/core';
+// @ts-ignore
+import { getDefaultRegistry } from '@rjsf/core/lib/utils';
 
 import ArrayFieldTemplate from '../ArrayFieldTemplate';
 import Fields from '../Fields';

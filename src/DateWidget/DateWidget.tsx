@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { FieldTemplateProps, WidgetProps } from 'react-jsonschema-form';
+import { FieldTemplateProps, WidgetProps } from '@rjsf/core';
 import { Modifier } from 'react-day-picker/types/Modifiers';
 import { DayPickerProps } from 'react-day-picker/types';
 import moment from 'moment';

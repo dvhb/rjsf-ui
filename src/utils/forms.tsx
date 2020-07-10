@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useState } from 'react';
-import { withTheme, FormProps } from 'react-jsonschema-form';
+import { withTheme, FormProps } from '@rjsf/core';
 
 import Theme from '../Theme';
 

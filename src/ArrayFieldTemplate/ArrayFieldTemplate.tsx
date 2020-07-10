@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { isMultiSelect, getDefaultRegistry, getUiOptions } from 'react-jsonschema-form/lib/utils';
-import { ArrayFieldTemplateProps, IdSchema } from 'react-jsonschema-form';
+import { ArrayFieldTemplateProps, IdSchema, utils } from '@rjsf/core';
+// @ts-ignore
+import { getDefaultRegistry } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
 
 import AddButton from '../AddButton/AddButton';
 import IconButton from '../IconButton/IconButton';
+const { getUiOptions, isMultiSelect } = utils;
 
 const ArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   const { schema, registry = getDefaultRegistry() } = props;

@@ -8,7 +8,7 @@ import pkg from './package.json';
 
 export default {
   input: 'src/index.ts',
-  external: ['react', 'moment'],
+  external: ['react', 'moment', '@rjsf/core'],
   output: [
     {
       file: pkg.main,

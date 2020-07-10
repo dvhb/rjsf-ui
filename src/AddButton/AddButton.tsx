@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddButtonProps } from 'react-jsonschema-form';
+import { AddButtonProps } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 // TODO: Add label property on type definition

@@ -1,11 +1,11 @@
 import moment from 'moment';
 import React, { useState, useMemo, useCallback } from 'react';
-import { FieldProps, FieldTemplateProps } from 'react-jsonschema-form';
-import { getUiOptions } from 'react-jsonschema-form/lib/utils';
+import { FieldProps, FieldTemplateProps, utils } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 import { ErrorListField } from '../ErrorList';
 import { customFormats } from '../utils/customFormats';
+const { getUiOptions } = utils;
 
 const TextBirthdayField = ({
   label: rawLabel,

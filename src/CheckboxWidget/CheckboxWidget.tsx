@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { FieldTemplateProps, WidgetProps } from 'react-jsonschema-form';
+import { FieldTemplateProps, WidgetProps } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 import { sanitized } from '../utils/sanitize';
