@@ -12,6 +12,7 @@
     "README.md"
   ],
   "scripts": {
+    "prebuild": "npm run clean",
     "build": "rollup -c",
     "build:dev": "rollup -c -w",
     "clean": "rm -rf ./dist",
