@@ -12,7 +12,6 @@
     "README.md"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
     "build": "rollup -c",
     "build:dev": "rollup -c -w",
     "clean": "rm -rf ./dist",
@@ -87,7 +86,8 @@
   },
   "peerDependencies": {
     "@dvhb/ui": "1.x.x",
-    "react": "16.x"
+    "react": "16.x",
+    "@rjsf/core": "^2.2.1"
   },
   "release": {
     "plugins": [
