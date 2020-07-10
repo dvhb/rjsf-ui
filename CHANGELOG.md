@@ -1,3 +1,17 @@
+# [1.2.0-beta.14](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.13...v1.2.0-beta.14) (2020-07-10)
+
+
+### Bug Fixes
+
+* migrate react-jsonschema-form to rjsd/core ([a41a3b4](https://github.com/dvhb/rjsf-ui/commit/a41a3b46bece463d0e326b18ff64d24ca51f9ea2))
+* return prebuild ([ac4a57d](https://github.com/dvhb/rjsf-ui/commit/ac4a57d3ba88317ac404281eeec781917f58d397))
+
+
+### Features
+
+* migrate react-jsonschema-from to rjsf/core (fixes) ([c5a34e7](https://github.com/dvhb/rjsf-ui/commit/c5a34e7834070f9e0113b80c9050589cce55ff9f))
+* remove cache file ([63fb385](https://github.com/dvhb/rjsf-ui/commit/63fb385268341a36cc217b9dbeb13edf91b6f680))
+
 # [1.2.0-beta.13](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2020-07-09)
 
 
