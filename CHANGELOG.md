@@ -1,3 +1,11 @@
+# [1.2.0-beta.15](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.14...v1.2.0-beta.15) (2020-07-10)
+
+
+### Bug Fixes
+
+* add rjsf/core to peer deps ([0f72a47](https://github.com/dvhb/rjsf-ui/commit/0f72a47c57e39c308cf8f87a44e3265e8cfaf671))
+* return prebuild ([671f59c](https://github.com/dvhb/rjsf-ui/commit/671f59ceed686b275cec18785bb2b7018d4e124e))
+
 # [1.2.0-beta.14](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.13...v1.2.0-beta.14) (2020-07-10)
 
 
