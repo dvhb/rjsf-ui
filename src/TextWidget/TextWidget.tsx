@@ -19,7 +19,7 @@ const TextWidget = ({
   rawErrors,
   options,
   schema,
-  placeholder: placeholderRaw,
+  placeholder,
 }: WidgetProps & Pick<FieldTemplateProps, 'rawErrors'>) => {
   const { Input, Field } = useComponents();
 
@@ -27,26 +27,13 @@ const TextWidget = ({
   const {
     mask,
     maskChar,
-    errorText: errorTextRaw,
-    countryForAlt,
+    errorText,
+    title,
+    disallowedChars,
     inputType = 'text',
     extraFormatErrors = [],
   } = options as any;
   const inputMaskChar = maskChar === null ? null : maskChar;
-
-  const isAltCountry =
-    countryForAlt && formContext.main.countries.length === 1 && formContext.main.countries[0].value === countryForAlt;
-  const title = isAltCountry ? options.titleAlt : options.title;
-  const disallowedChars = isAltCountry ? options.disallowedCharsAlt : options.disallowedChars;
-  const placeholder = isAltCountry ? (options.placeholderAlt as string) : placeholderRaw;
-  const errorText = isAltCountry
-    ? {
-        ...errorTextRaw,
-        required: errorTextRaw.requiredAlt,
-        disallowedChars: errorTextRaw.disallowedCharsAlt,
-        format: errorTextRaw.formatAlt,
-      }
-    : errorTextRaw;
 
   extraFormatErrors.forEach((extra: { pattern: string; text: string }) => {
     if (new RegExp(extra.pattern, 'i').test(value ?? '')) {
