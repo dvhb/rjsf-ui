@@ -72,6 +72,18 @@ const DefaultArrayItem = (props: any) => {
               {itemOptions.countLabel.replace(`{${'index'}}`, props.index + 1)}
             </Text>
           )}
+          {props.hasRemove && props.index > 0 && itemOptions.removeByCross && (
+            <>
+              <Spacer marginRight="xs" />
+              <Button
+                type="asLink"
+                onClick={props.onDropIndexClick(props.index)}
+                disabled={props.disabled || props.readonly}
+              >
+                <Icon name="Cross" />
+              </Button>
+            </>
+          )}
           {props.hasToolbar && (
             <Aligner.Right>
               {(props.hasMoveUp || props.hasMoveDown) && (
@@ -94,7 +106,7 @@ const DefaultArrayItem = (props: any) => {
                   onClick={props.onReorderClick(props.index, props.index + 1)}
                 />
               )}
-              {props.hasRemove && props.index > 0 && (
+              {props.hasRemove && props.index > 0 && !itemOptions.removeByCross && (
                 <Button
                   type="asLink"
                   onClick={props.onDropIndexClick(props.index)}
