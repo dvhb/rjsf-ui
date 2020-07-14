@@ -1,3 +1,10 @@
+# [1.2.0-beta.16](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.15...v1.2.0-beta.16) (2020-07-14)
+
+
+### Features
+
+* add array element removing by cross ([d2bc3b3](https://github.com/dvhb/rjsf-ui/commit/d2bc3b3e85a7fa7b34a344f76ab9d21adbd45713))
+
 # [1.2.0-beta.15](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.14...v1.2.0-beta.15) (2020-07-10)
 
 
