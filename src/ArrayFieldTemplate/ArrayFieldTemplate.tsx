@@ -62,8 +62,6 @@ const DefaultArrayItem = (props: any, itemsCount: number) => {
   };
   const itemOptions = props.children.props.uiSchema;
 
-  console.dir(props);
-
   const showLabel = itemOptions.countLabel && (!itemOptions.firstItemLabelDisabled || props.index > 0);
   return (
     <div key={props.index}>
