@@ -52,7 +52,7 @@ const ArrayFieldDescription = ({ DescriptionField, idSchema, description }: Arra
 };
 
 // Used in the two templates
-const DefaultArrayItem = (props: any) => {
+const DefaultArrayItem = (props: any, itemsCount: number) => {
   const { Spacer, Aligner, Text, Button, Icon } = useComponents();
   const btnStyle = {
     flex: 1,
@@ -61,6 +61,8 @@ const DefaultArrayItem = (props: any) => {
     fontWeight: 'bold',
   };
   const itemOptions = props.children.props.uiSchema;
+
+  console.dir(props);
 
   const showLabel = itemOptions.countLabel && (!itemOptions.firstItemLabelDisabled || props.index > 0);
   return (
@@ -72,9 +74,9 @@ const DefaultArrayItem = (props: any) => {
               {itemOptions.countLabel.replace(`{${'index'}}`, props.index + 1)}
             </Text>
           )}
-          {props.hasRemove && props.index > 0 && itemOptions.removeByCross && (
+          {props.hasRemove && itemsCount > 1 && itemOptions.removeByCross && (
             <>
-              <Spacer marginRight="xs" />
+              <Spacer marginRight="xxs" />
               <Button
                 type="asLink"
                 onClick={props.onDropIndexClick(props.index)}
@@ -106,7 +108,7 @@ const DefaultArrayItem = (props: any) => {
                   onClick={props.onReorderClick(props.index, props.index + 1)}
                 />
               )}
-              {props.hasRemove && props.index > 0 && !itemOptions.removeByCross && (
+              {props.hasRemove && itemsCount > 1 && !itemOptions.removeByCross && (
                 <Button
                   type="asLink"
                   onClick={props.onDropIndexClick(props.index)}
@@ -148,7 +150,7 @@ const DefaultFixedArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
       )}
 
       <div className="row array-item-list" key={`array-item-list-${props.idSchema.$id}`}>
-        {props.items && props.items.map(DefaultArrayItem)}
+        {props.items && props.items.map(p => DefaultArrayItem(p, props.items.length))}
       </div>
 
       {props.canAdd && (
@@ -190,7 +192,7 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
       )}
 
       <div key={`array-item-list-${props.idSchema.$id}`}>
-        {props.items && props.items.map(p => DefaultArrayItem(p))}
+        {props.items && props.items.map(p => DefaultArrayItem(p, props.items.length))}
 
         {props.canAdd ? (
           <Field>
