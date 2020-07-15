@@ -1,3 +1,11 @@
+# [1.2.0-beta.17](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.16...v1.2.0-beta.17) (2020-07-15)
+
+
+### Bug Fixes
+
+* allow first array item removeing, change indentss ([1b6ff13](https://github.com/dvhb/rjsf-ui/commit/1b6ff134b1b0e684f58d7f11ea6a4046225744cf))
+* remove console ([be8b54e](https://github.com/dvhb/rjsf-ui/commit/be8b54e6561d8f395641b6d6df6372b84a64e4b3))
+
 # [1.2.0-beta.16](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.15...v1.2.0-beta.16) (2020-07-14)
 
 
