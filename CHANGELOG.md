@@ -1,3 +1,10 @@
+# [1.2.0-beta.18](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.17...v1.2.0-beta.18) (2020-07-22)
+
+
+### Bug Fixes
+
+* show only one error per time ([9900572](https://github.com/dvhb/rjsf-ui/commit/9900572c8aa3b20752b7d2e9c338800ffaa8bd64))
+
 # [1.2.0-beta.17](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.16...v1.2.0-beta.17) (2020-07-15)
 
 
