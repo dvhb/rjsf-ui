@@ -48,7 +48,14 @@ const TextWidget = ({
   const showError = isStepSubmitted || localErrors.length > 0;
   const { maxLength } = schema;
 
-  const displayErrors = useMemo(() => (isStepSubmitted ? [...(rawErrors ?? []), ...localErrors] : localErrors), [
+  const computeErrors = (rawErrors: string[], localErrors: string[], isStepSubmitted: boolean) => {
+    if (!isStepSubmitted || localErrors.length) {
+      return localErrors;
+    }
+    return rawErrors ? rawErrors : [];
+  };
+
+  const displayErrors = useMemo(() => computeErrors(rawErrors, localErrors, isStepSubmitted), [
     rawErrors,
     localErrors,
     isStepSubmitted,
