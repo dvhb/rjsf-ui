@@ -1,3 +1,10 @@
+# [1.2.0-beta.19](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.18...v1.2.0-beta.19) (2020-08-04)
+
+
+### Bug Fixes
+
+* reinitialization value for input ([9cb3154](https://github.com/dvhb/rjsf-ui/commit/9cb3154d5ae6448834aa022da6c075c078ea03c4))
+
 # [1.2.0-beta.18](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.17...v1.2.0-beta.18) (2020-07-22)
 
 
