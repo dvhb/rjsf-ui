@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { FieldProps, FieldTemplateProps } from '@rjsf/core';
 // @ts-ignore
 import { getUiOptions } from '@rjsf/core/lib/utils';
@@ -22,6 +22,7 @@ const TextBirthdayField = ({
   const [localErrors, setLocalErrors] = useState<string[]>([]);
   const [localValue, setLocalValue] = useState(formData);
   const [showOldHint, setShowOldHint] = useState(false);
+  const [editMode, setEditMode] = useState(false);
   const {
     mask,
     placeholder,
@@ -118,10 +119,19 @@ const TextBirthdayField = ({
         setShowOldHint(false);
       }
       setLocalErrors(errors.length ? errors : []);
+      setEditMode(false);
       onChange(errors.length ? options.emptyValue : valueWithoutMask);
     },
     [options, onChange, minAge, maxAge, minYear],
   );
+  const handleFocus = useCallback(() => {
+    setEditMode(true);
+  }, []);
+  useEffect(() => {
+    if (!editMode && localValue !== formData) {
+      setLocalValue(formData);
+    }
+  }, [localValue, formData, editMode]);
 
   const resultDescription = showOldHint ? oldHint : [description || schema.description];
   return (
@@ -129,11 +139,12 @@ const TextBirthdayField = ({
       <Input
         placeholder={placeholder}
         required={hasError && showError}
-        value={localValue}
+        value={editMode ? localValue : formData}
         mask={mask}
         maskChar={inputMaskChar}
         onChange={handleChange}
         type={inputType}
+        onFocus={handleFocus}
         onBlur={handleBlur}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
