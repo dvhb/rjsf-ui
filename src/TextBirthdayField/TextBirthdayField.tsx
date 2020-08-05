@@ -1,6 +1,6 @@
 import moment from 'moment';
-import React, { useState, useMemo, useCallback } from 'react';
 import { ArrayFieldTemplateProps, FieldProps, FieldTemplateProps } from '@rjsf/core';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 // @ts-ignore
 import { getUiOptions } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
@@ -24,6 +24,7 @@ const TextBirthdayField = ({
   const [localErrors, setLocalErrors] = useState<string[]>([]);
   const [localValue, setLocalValue] = useState(formData);
   const [showOldHint, setShowOldHint] = useState(false);
+  const [editMode, setEditMode] = useState(false);
   const {
     mask,
     placeholder,
@@ -120,10 +121,19 @@ const TextBirthdayField = ({
         setShowOldHint(false);
       }
       setLocalErrors(errors.length ? errors : []);
+      setEditMode(false);
       onChange(errors.length ? options.emptyValue : valueWithoutMask);
     },
     [options, onChange, minAge, maxAge, minYear],
   );
+  const handleFocus = useCallback(() => {
+    setEditMode(true);
+  }, []);
+  useEffect(() => {
+    if (!editMode && localValue !== formData) {
+      setLocalValue(formData);
+    }
+  }, [localValue, formData, editMode]);
 
   const resultDescription = showOldHint ? oldHint : [description || schema.description];
   return (
@@ -131,11 +141,12 @@ const TextBirthdayField = ({
       <Input
         placeholder={placeholder}
         required={hasError && showError}
-        value={localValue}
+        value={editMode ? localValue : formData}
         mask={mask}
         maskChar={inputMaskChar}
         onChange={handleChange}
         type={inputType}
+        onFocus={handleFocus}
         onBlur={handleBlur}
         data-cy={id ?? idSchema.$id}
       />
