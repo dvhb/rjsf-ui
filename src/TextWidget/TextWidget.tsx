@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { FieldTemplateProps, WidgetProps } from '@rjsf/core';
+import { ArrayFieldTemplateProps, FieldTemplateProps, WidgetProps } from '@rjsf/core';
 import { useComponents } from '@dvhb/ui';
 
 import { ErrorListField } from '../ErrorList';
@@ -20,7 +20,8 @@ const TextWidget = ({
   options,
   schema,
   placeholder,
-}: WidgetProps & Pick<FieldTemplateProps, 'rawErrors'>) => {
+  idSchema,
+}: WidgetProps & Pick<FieldTemplateProps, 'rawErrors'> & Pick<ArrayFieldTemplateProps, 'idSchema'>) => {
   const { Input, Field } = useComponents();
 
   const [localErrors, setLocalErrors] = useState<string[]>([]);
@@ -129,6 +130,7 @@ const TextWidget = ({
         onChange={_onChange}
         type={inputType}
         onBlur={_onBlur}
+        data-cy={id ?? idSchema.$id}
         // onFocus={_onFocus}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />

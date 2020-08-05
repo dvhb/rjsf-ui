@@ -32,6 +32,7 @@ const CheckboxWidget = (props: WidgetProps & Pick<FieldTemplateProps, 'rawErrors
             onChange={handleChange}
             label={labelContent}
             type={options.type as 'slider' | undefined}
+            dataCy={id}
           />
 
           {help && (

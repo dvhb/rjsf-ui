@@ -1,6 +1,6 @@
 import moment from 'moment';
 import React, { useState, useMemo, useCallback } from 'react';
-import { FieldProps, FieldTemplateProps } from '@rjsf/core';
+import { ArrayFieldTemplateProps, FieldProps, FieldTemplateProps } from '@rjsf/core';
 // @ts-ignore
 import { getUiOptions } from '@rjsf/core/lib/utils';
 import { useComponents } from '@dvhb/ui';
@@ -16,7 +16,9 @@ const TextBirthdayField = ({
   rawErrors,
   schema,
   uiSchema,
-}: FieldProps & Pick<FieldTemplateProps, 'rawErrors'>) => {
+  idSchema,
+  id,
+}: FieldProps & Pick<FieldTemplateProps, 'rawErrors'> & Pick<ArrayFieldTemplateProps, 'idSchema'>) => {
   const { Input, Field } = useComponents();
 
   const [localErrors, setLocalErrors] = useState<string[]>([]);
@@ -135,6 +137,7 @@ const TextBirthdayField = ({
         onChange={handleChange}
         type={inputType}
         onBlur={handleBlur}
+        data-cy={id ?? idSchema.$id}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>
