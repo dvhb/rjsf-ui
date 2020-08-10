@@ -45,13 +45,14 @@ const DateWidget = ({ label: rawLabel, value, onChange, formContext, rawErrors, 
         .add(daysFromNowMin as number, 'days')
         .format('YYYY-MM-DD');
       if (!localValue || date === localValue) {
-        if (!value) {
-          onChange(date);
-        }
         setLocalValue(date);
+
+        if (!value) {
+          setTimeout(() => handleChange(date), 0);
+        }
       }
     }
-  }, [onChange, setLocalValue, daysFromNowMin]);
+  }, []);
 
   const displayErrors = useMemo(() => {
     let filteredRawErrors = rawErrors || [];
