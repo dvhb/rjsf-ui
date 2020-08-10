@@ -157,6 +157,7 @@ const DefaultFixedArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
           onClick={props.onAddClick}
           disabled={props.disabled || props.readonly}
           label={props.uiSchema.buttonLabel}
+          data-cy={`${props.idSchema.$id}-add`}
         />
       )}
     </fieldset>
@@ -196,7 +197,12 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
           <Field>
             <Aligner>
               <Spacer margin="none" marginRight="xs">
-                <Button type="asLink" onClick={props.onAddClick} disabled={props.disabled || props.readonly}>
+                <Button
+                  type="asLink"
+                  onClick={props.onAddClick}
+                  disabled={props.disabled || props.readonly}
+                  data-cy={`${props.idSchema.$id}-add`}
+                >
                   <Spacer margin="none" marginRight="xs">
                     <Icon name="Plus" />
                   </Spacer>

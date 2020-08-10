@@ -283,7 +283,7 @@ class CollapsibleField extends Component<FieldProps> {
     title = uiSchema['ui:titleCollapse'] ? uiSchema['ui:titleCollapse'] : title ? title : name;
     const customizedId = collapsed ? $id : undefined;
     return (
-      <div id={customizedId}>
+      <div id={customizedId} data-cy={customizedId}>
         <CollapseMenuBase
           title={title}
           uiSchema={uiSchema}
