@@ -1,3 +1,10 @@
+# [1.2.0-beta.21](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.20...v1.2.0-beta.21) (2020-08-10)
+
+
+### Features
+
+* add attributes for tests ([1919ac0](https://github.com/dvhb/rjsf-ui/commit/1919ac0cfc9bc0628025068edd08baf9a52eee3e))
+
 # [1.2.0-beta.20](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.19...v1.2.0-beta.20) (2020-08-05)
 
 
