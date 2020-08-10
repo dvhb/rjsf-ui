@@ -1,3 +1,10 @@
+# [1.2.0-beta.22](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.21...v1.2.0-beta.22) (2020-08-10)
+
+
+### Bug Fixes
+
+* set default date for dateWidget ([b502a13](https://github.com/dvhb/rjsf-ui/commit/b502a1363fa6cc9d2afacfa0c043a5575c461c53))
+
 # [1.2.0-beta.21](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.20...v1.2.0-beta.21) (2020-08-10)
 
 
