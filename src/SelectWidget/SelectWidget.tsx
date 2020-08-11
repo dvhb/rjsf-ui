@@ -117,7 +117,14 @@ const SelectWidget = ({
   const showError = isStepSubmitted || localErrors.length > 0;
   const label = options.title ? String(options.title) : rawLabel;
 
-  const displayErrors = useMemo(() => (isStepSubmitted ? [...(rawErrors ?? []), ...localErrors] : localErrors), [
+  const computeErrors = (rawErrors: string[], localErrors: string[], isStepSubmitted: boolean) => {
+    if (!isStepSubmitted || localErrors.length) {
+      return localErrors;
+    }
+    return rawErrors ? rawErrors : [];
+  };
+
+  const displayErrors = useMemo(() => computeErrors(rawErrors, localErrors, isStepSubmitted), [
     rawErrors,
     localErrors,
     isStepSubmitted,
@@ -134,8 +141,20 @@ const SelectWidget = ({
 
   const handleInputChange = (inputVal: string, { action }: any) => {
     if (action === 'input-change') {
-      setInputValue(inputVal);
-      return inputVal;
+      let value = inputVal;
+      const { disallowedChars } = options as { disallowedChars?: string };
+
+      if (disallowedChars != null) {
+        const regex = new RegExp(`${disallowedChars}+`, 'gi');
+        value = value.replace(regex, '');
+        if (value !== inputVal) {
+          setLocalErrors(errors => (errors.includes('disallowedChars') ? errors : [...errors, 'disallowedChars']));
+        } else {
+          setLocalErrors(errors => errors.filter(error => error !== 'disallowedChars'));
+        }
+      }
+      setInputValue(value);
+      return value;
     }
     if (action === 'input-blur' && searchable) {
       const option = getFullValue(enumOptions, value, multiple, options);

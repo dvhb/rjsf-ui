@@ -43,6 +43,9 @@ const schema: JSONSchema7 = {
 };
 
 const uiSchema: UiSchema = {
+  single: {
+    'ui:disallowedChars': '[^a-z-а-яё/\\d-]',
+  },
   async: {
     'ui:url': 'http://jsonplaceholder.typicode.com/users',
     'ui:valueProp': 'email',
