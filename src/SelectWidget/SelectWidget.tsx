@@ -133,6 +133,7 @@ const SelectWidget = ({
   const handleChange = (option: any) => {
     setTimeout(() => {
       onChange(processValue(schema, option?.value));
+      setLocalErrors([]);
       if (searchable) {
         setInputValue(option?.label || '');
       }
@@ -159,6 +160,9 @@ const SelectWidget = ({
     if (action === 'input-blur' && searchable) {
       const option = getFullValue(enumOptions, value, multiple, options);
       setInputValue(option?.label || '');
+      if (option.hasOwnProperty('label')) {
+        setLocalErrors([]);
+      }
       return option?.label || '';
     }
   };
