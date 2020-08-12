@@ -160,7 +160,7 @@ const SelectWidget = ({
     if (action === 'input-blur' && searchable) {
       const option = getFullValue(enumOptions, value, multiple, options);
       setInputValue(option?.label || '');
-      if (option.hasOwnProperty('label')) {
+      if (option?.hasOwnProperty('label')) {
         setLocalErrors([]);
       }
       return option?.label || '';
