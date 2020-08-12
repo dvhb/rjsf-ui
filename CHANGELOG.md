@@ -1,3 +1,10 @@
+# [1.2.0-beta.25](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.24...v1.2.0-beta.25) (2020-08-12)
+
+
+### Bug Fixes
+
+* clear validation for SelectWidget after select value ([9a1ece9](https://github.com/dvhb/rjsf-ui/commit/9a1ece904260be1a5e04b63cbe049273d7b0c523))
+
 # [1.2.0-beta.24](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.23...v1.2.0-beta.24) (2020-08-12)
 
 
