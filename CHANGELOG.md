@@ -1,3 +1,10 @@
+# [1.2.0-beta.26](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.25...v1.2.0-beta.26) (2020-08-21)
+
+
+### Features
+
+* add flag for first item delete ([8dc1c26](https://github.com/dvhb/rjsf-ui/commit/8dc1c269eea35782e3c46eae2bb5b71bcc8516ca))
+
 # [1.2.0-beta.25](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.24...v1.2.0-beta.25) (2020-08-12)
 
 
