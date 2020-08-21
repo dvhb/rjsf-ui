@@ -63,6 +63,7 @@ const DefaultArrayItem = (props: any, itemsCount: number) => {
   const itemOptions = props.children.props.uiSchema;
 
   const showLabel = itemOptions.countLabel && (!itemOptions.firstItemLabelDisabled || props.index > 0);
+  const showDeleteButton = props.index > 0 || (!itemOptions.forbidDeleteFirst && props.index === 0);
   return (
     <div key={props.index}>
       <Spacer>
@@ -72,7 +73,7 @@ const DefaultArrayItem = (props: any, itemsCount: number) => {
               {itemOptions.countLabel.replace(`{${'index'}}`, props.index + 1)}
             </Text>
           )}
-          {props.hasRemove && itemsCount > 1 && itemOptions.removeByCross && (
+          {props.hasRemove && itemsCount > 1 && itemOptions.removeByCross && showDeleteButton && (
             <>
               <Spacer marginRight="xxs" />
               <Button
@@ -106,7 +107,7 @@ const DefaultArrayItem = (props: any, itemsCount: number) => {
                   onClick={props.onReorderClick(props.index, props.index + 1)}
                 />
               )}
-              {props.hasRemove && itemsCount > 1 && !itemOptions.removeByCross && (
+              {props.hasRemove && itemsCount > 1 && !itemOptions.removeByCross && showDeleteButton && (
                 <Button
                   type="asLink"
                   onClick={props.onDropIndexClick(props.index)}
