@@ -105,7 +105,9 @@ const TextWidget = ({
 
   const _onFocus = useCallback(
     ({ target: { value } }: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      onFocus(id, value && value);
+      if (onFocus) {
+        onFocus(id, value && value);
+      }
     },
     [onFocus],
   );
