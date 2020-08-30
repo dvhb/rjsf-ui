@@ -103,6 +103,13 @@ const TextWidget = ({
     [onBlur, onChange, id, options],
   );
 
+  const _onFocus = useCallback(
+    ({ target: { value } }: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      onFocus(id, value && value);
+    },
+    [onFocus],
+  );
+
   const reachedMaxLength = maxLength && value && value.length === maxLength;
   const description = [
     reachedMaxLength && options.maxLengthHint && (
@@ -138,7 +145,7 @@ const TextWidget = ({
         type={inputType}
         onBlur={_onBlur}
         data-cy={id ?? idSchema.$id}
-        // onFocus={_onFocus}
+        onFocus={_onFocus}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>
