@@ -1,3 +1,10 @@
+# [1.2.0-beta.27](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.26...v1.2.0-beta.27) (2020-08-30)
+
+
+### Bug Fixes
+
+* enable onFocus event for TextWidget ([63dce19](https://github.com/dvhb/rjsf-ui/commit/63dce19727240f78346c7e820c1a13d68cf0c773))
+
 # [1.2.0-beta.26](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.25...v1.2.0-beta.26) (2020-08-21)
 
 
