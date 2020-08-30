@@ -1,3 +1,10 @@
+# [1.2.0-beta.28](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.27...v1.2.0-beta.28) (2020-08-30)
+
+
+### Bug Fixes
+
+* fire onfocus Event only if provided ([d9d86b2](https://github.com/dvhb/rjsf-ui/commit/d9d86b25a69a4129217739f91287b604ade36d61))
+
 # [1.2.0-beta.27](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.26...v1.2.0-beta.27) (2020-08-30)
 
 
