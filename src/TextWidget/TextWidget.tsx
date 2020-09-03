@@ -32,6 +32,7 @@ const TextWidget = ({
     title,
     disallowedChars,
     inputType = 'text',
+    autocomplete = true,
     extraFormatErrors = [],
   } = options as any;
   const inputMaskChar = maskChar === null ? null : maskChar;
@@ -148,6 +149,7 @@ const TextWidget = ({
         onBlur={_onBlur}
         data-cy={id ?? idSchema.$id}
         onFocus={_onFocus}
+        autocomplete={autocomplete ? undefined : 'off'}
       />
       <ErrorListField hasError={hasError && showError} rawErrors={displayErrors} errorText={errorText} />
     </Field>
