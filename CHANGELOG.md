@@ -1,3 +1,10 @@
+# [1.2.0-beta.29](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.28...v1.2.0-beta.29) (2020-09-03)
+
+
+### Features
+
+* add autocomplete prop ([0ec7661](https://github.com/dvhb/rjsf-ui/commit/0ec7661c89ea615d639892a7feeda6686909de5e))
+
 # [1.2.0-beta.28](https://github.com/dvhb/rjsf-ui/compare/v1.2.0-beta.27...v1.2.0-beta.28) (2020-08-30)
 
 
