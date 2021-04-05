@@ -77,7 +77,7 @@ const DefaultArrayItem = (props: any, itemsCount: number) => {
             <>
               <Spacer marginRight="xxs" />
               <Button
-                type="asLink"
+                variant="asLink"
                 onClick={props.onDropIndexClick(props.index)}
                 disabled={props.disabled || props.readonly}
               >
@@ -109,7 +109,7 @@ const DefaultArrayItem = (props: any, itemsCount: number) => {
               )}
               {props.hasRemove && itemsCount > 1 && !itemOptions.removeByCross && showDeleteButton && (
                 <Button
-                  type="asLink"
+                  variant="asLink"
                   onClick={props.onDropIndexClick(props.index)}
                   disabled={props.disabled || props.readonly}
                 >
@@ -199,7 +199,7 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
             <Aligner>
               <Spacer margin="none" marginRight="xs">
                 <Button
-                  type="asLink"
+                  variant="asLink"
                   onClick={props.onAddClick}
                   disabled={props.disabled || props.readonly}
                   data-cy={`${props.idSchema.$id}-add`}
