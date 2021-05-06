@@ -41,7 +41,7 @@
     ]
   },
   "dependencies": {
-    "sanitize-html": "^1.27.0"
+    "sanitize-html": "^2.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
